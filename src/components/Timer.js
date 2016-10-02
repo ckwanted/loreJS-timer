@@ -13,8 +13,6 @@ export default class Timer extends Component {
       elapsed : 0
     };
 
-    this.componentWillUnmount = this.componentWillUnmount.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
     this.tick = this.tick.bind(this);
   }
 
@@ -34,7 +32,7 @@ export default class Timer extends Component {
 
   tick() {
     this.setState({
-      elapsed : new Date() - parseInt(this.props.start)
+      elapsed : new Date() - this.props.start
     });
   }
 
